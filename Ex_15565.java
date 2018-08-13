@@ -27,7 +27,7 @@ public class Ex_15565
 		
 		if(dolls.length() >0)
 		{
-			int l=-110, i = 0;
+			int l = -1, i = 0;
 			int a = dolls.length();
 			do
 			{
