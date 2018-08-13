@@ -61,9 +61,16 @@ public class Ex_15565
 				System.out.println("집합의 크기 =");
 				System.out.println(array[n]);     // 집합의 크기
 			}
+			
+			for ( int r = 0; r < count-K+1; r++)
+			{
+				System.out.println("array["+ r+ "]의 값");
+				System.out.println(array[r]);
+			}
 
 			int min = array[0];
-	        for(int i=1 ; i < array.length-1; i++)
+			System.out.println(array.length);
+	        for(int i=0 ; i < array.length; i++)
 	        {
 	            if(array[i] <= min)
 	            {
