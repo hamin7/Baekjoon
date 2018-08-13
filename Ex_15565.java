@@ -52,7 +52,7 @@ public class Ex_15565
 		} 
 		else
 		{
-			int[] array = new int[count-2];
+			int[] array = new int[count-K+1];
 			for (int n = 0; n < count-K+1; n++)
 			{
 				int size = lion[K-1+n] - lion[n] + 1;
@@ -79,8 +79,6 @@ public class Ex_15565
 	            System.out.println("지금까지 최소 =");
 	            System.out.println(min);
 	        }
-	        
-			
 		}
 	}
 }
