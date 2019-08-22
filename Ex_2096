@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int Max(int a, int b) { return a > b ? a : b; }
+int Min(int a, int b) { return a < b ? a : b; }
+void main(){
+	int i, j, max, min, n, d[100001][4] = { 0 }, a[100001][4];
+	scanf("%d", &n);
+	for (i=1;i<=n;i++)
+		for(j=1;j<=3;j++)
+			scanf("%d", &a[i][j]);
+	for(i=1;i<=n;i++){
+		d[i][1] = Max(d[i-1][1], d[i-1][2])+a[i][1];
+		d[i][2] = Max(d[i][1]-a[i][1], d[i-1][3])+a[i][2];
+		d[i][3] = Max(d[i-1][2], d[i-1][3])+a[i][3];
+	}
+	max = Max(d[n][1],Max(d[n][2], d[n][3]));
+	for(i=1;i<=n;i++) {
+		d[i][1] = Min(d[i-1][1], d[i-1][2])+a[i][1];
+		d[i][2] = Min(d[i][1]-a[i][1], d[i-1][3])+a[i][2];
+		d[i][3] = Min(d[i-1][2], d[i-1][3])+a[i][3];
+	}
+	min = Min(d[n][1],Min(d[n][2], d[n][3]));
+	printf("%d %d", max, min);
+}
